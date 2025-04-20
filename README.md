@@ -4,7 +4,7 @@ Greetings, Young Wizard!
 
 Elixir Crafter is a Java application that touches the Wizard World API to fetch and manage magical elixirs and their ingredients — all through a mystical command-line interface (CLI).
 
-## Technologies Used
+## Main Dependencies
 - **Java 17**
 - **Maven**: Build and dependency management.
 - **Junit 5**: Unit test and ensure application functionality.
@@ -17,7 +17,7 @@ src
 │   └── java
 │       └── elixircrafter
 │           ├── cli         # Main CLI execution loop and user interactions
-│           ├── config      # Configuration classes for the Wizard World API connection
+│           ├── config      # Configuration class for Wizard World API
 │           ├── constants   # Constants reused across all application
 │           ├── exception   # Custom exception classes for specific errors
 │           ├── service     # Handles filtering elixirs logic
