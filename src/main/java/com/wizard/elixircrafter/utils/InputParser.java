@@ -1,12 +1,12 @@
-package com.example.wizardelixir.demo.utils;
+package com.wizard.elixircrafter.utils;
 
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class InputProcessingUtils {
+public class InputParser {
 
-    public static Set<String> processIngredientsInput(String input) {
+    public static Set<String> parseIngredients(String input) {
         if (input == null || input.isBlank()) {
             return Set.of();
         }

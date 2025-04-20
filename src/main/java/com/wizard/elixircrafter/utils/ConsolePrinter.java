@@ -1,20 +1,20 @@
-package com.example.wizardelixir.demo.utils;
+package com.wizard.elixircrafter.utils;
 
-public final class ConsolePrinterUtils {
+import com.example.wizardelixirmaker.model.ElixirDto;
 
-    private ConsolePrinterUtils() {
-    }
+import java.util.List;
 
+public class ConsolePrinter {
     public static void printMessage(String message) {
         System.out.println(message);
     }
 
-    public static void printWelcome() {
+    public static void printWelcomeMessage() {
         printMessage("\nAh... A wizard in the making! Welcome to the Elixir Crafter's class.");
     }
 
     public static void printNoIngredientsMessage() {
-        printMessage("No ingredients provided. Farewell, young wizard...");
+        printMessage("No ingredients offered. Focus your mind, young wizard!");
     }
 
     public static void printGoodbye() {
@@ -24,11 +24,12 @@ public final class ConsolePrinterUtils {
         printMessage("Invalid input. Please enter 'Y' for Yes or 'N' for No:");
     }
 
-    public static void printNoElixirsFound() {
+    public static void printNoElixirs() {
         printMessage("The alchemy fails... no elixir can arise from these ingredients.");
     }
 
-    public static void printElixirsFoundMessage() {
+    public static void printElixirsFound(List<ElixirDto> elixirs) {
         printMessage("\nFrom your offerings, these elixirs shall be born:");
+        elixirs.forEach(elixir -> printMessage("- " + elixir.getName()));
     }
 }

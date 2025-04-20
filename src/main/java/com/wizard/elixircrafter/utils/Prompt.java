@@ -1,13 +1,13 @@
-package com.example.wizardelixir.demo.utils;
+package com.wizard.elixircrafter.utils;
 
 import java.util.Scanner;
 
-public class PromptUtils {
+public class Prompt {
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static String prompt(String message) {
-        ConsolePrinterUtils.printMessage(message);
+        ConsolePrinter.printMessage(message);
         return scanner.nextLine();
     }
 
@@ -21,7 +21,7 @@ public class PromptUtils {
                 case "N" -> {
                     return false;
                 }
-                default -> ConsolePrinterUtils.printInvalidYesNoInput();
+                default -> ConsolePrinter.printInvalidYesNoInput();
             }
         }
     }
