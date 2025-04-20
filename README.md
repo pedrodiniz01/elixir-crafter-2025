@@ -41,7 +41,7 @@ The typical workflow is as follows:
 - If any elixirs can be crafted with the given ingredients, they are displayed to the user.
 - After each search, the user is asked whether they wish to attempt crafting another elixir or quit the application.
 
-## Development Approach
+## Best Practices 💡
 
 Even though Elixir Crafter is a pretty simple application, it was built with some design patterns in mind, such as:
 - Swagger provided was used to generate the API contract and its models automatically.
