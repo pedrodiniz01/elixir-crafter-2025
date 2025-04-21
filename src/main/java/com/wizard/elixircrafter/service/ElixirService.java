@@ -1,10 +1,11 @@
 package com.wizard.elixircrafter.service;
 
 import com.example.wizardelixirmaker.api.ElixirsApi;
-import com.example.wizardelixirmaker.invoker.ApiClient;
 import com.example.wizardelixirmaker.model.ElixirDto;
 import com.wizard.elixircrafter.constants.Constants;
 import com.wizard.elixircrafter.exception.ElixirApiException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,6 +17,7 @@ public class ElixirService {
 
     private final ElixirsApi elixirsApi;
     private final List<ElixirDto> allElixirs;
+    private static final Logger logger = LoggerFactory.getLogger(ElixirService.class);
 
     public ElixirService(ElixirsApi elixirsApi) {
         this.elixirsApi = elixirsApi;
@@ -25,9 +27,11 @@ public class ElixirService {
     private List<ElixirDto> loadElixirs() {
         try {
             List<ElixirDto> fetchedElixirs = elixirsApi.elixirsGet(null, null, null, null, null);
+            logger.info("Successfully fetched {} elixirs.", fetchedElixirs.size());
             return fetchedElixirs != null ? fetchedElixirs : Collections.emptyList();
         } catch (Exception e) {
-            throw new ElixirApiException(Constants.Exception.INVALID_ELIXIR_API_EXCEPTION, e);
+            logger.error("Failed to load elixirs from API", e);
+            throw new ElixirApiException(Constants.ExceptionMessages.INVALID_ELIXIR_API_RESPONSE, e);
         }
     }
 
