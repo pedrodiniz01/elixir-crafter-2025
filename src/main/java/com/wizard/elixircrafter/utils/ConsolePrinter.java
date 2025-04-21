@@ -20,6 +20,7 @@ public class ConsolePrinter {
     public static void printGoodbye() {
         printMessage("Goodbye Wizard! See you next time.");
     }
+
     public static void printInvalidYesNoInput() {
         printMessage("Invalid input. Please enter 'Y' for Yes or 'N' for No:");
     }
